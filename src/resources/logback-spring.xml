@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration
+    xmlns="http://ch.qos.logback/xml/ns/logback"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://ch.qos.logback/xml/ns/logback http://ch.qos.logback/xml/ns/logback/logback.xsd">
+<!-- For assistance related to logback-translator or configuration  -->
+<!-- files in general, please contact the logback user mailing list -->
+<!-- at http://www.qos.ch/mailman/listinfo/logback-user             -->
+<!--                                                                -->
+<!-- For professional support please see                            -->
+<!--    http://www.qos.ch/shop/products/professionalSupport         -->
+<!--                                                                -->
+  
+  
+   <!-- <property resource="properties/logback-spring.properties" /> -->
+  <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+    <Target>System.out</Target>
+    <encoder>
+      <pattern>%d{yyyy-MM-dd HH:mm:ss} %-1p [%C %M %L] - %m%n</pattern>
+    </encoder>
+  </appender>
+  
+  <logger name="org.apache.ibatis" />
+  <logger name="org.mybatis" />
+  <logger name="java.sql" />
+  
+  <logger name="com.whxx" />
+ 
+  <logger name="com.alibaba" level="warn"/>
+  <logger name="springfox" level="error"/>
+  <logger name="org.springframework" level="info"/> 
+
+ 
+  <root level="info">
+    <appender-ref ref="stdout"/>
+  </root>
+</configuration>
